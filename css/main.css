@@ -1,0 +1,90 @@
+
+body {
+	text-align:center;
+}
+
+#main {
+	text-align:left;
+	padding: 46px 22px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#main header {
+	margin-bottom: 4.2em;
+}
+
+.btn-h1 {
+	background-color: #ebedf7;
+	font-size: 36px;
+	font-weight: 500;
+	vertical-align: baseline;
+}
+
+.btn-h1 .caret {
+	border-width:8px;
+}
+
+.currently .h4 {
+	font-weight: 200;
+	font-size: 20px;
+	display: block;
+}
+
+.currently .h4 .muted {
+	color: #999;
+}
+
+.currently h1 {
+	align-items: flex-end;
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.currently h1 .big {
+	margin-right: 0.5em;
+    min-width: 272px;
+    text-align: right;
+}
+
+.currently h1 .temp {
+	font-size: 86px;
+    line-height: 100px;
+}
+
+.currently h1 .summary {
+    display: block;;
+    padding-bottom: 6px;
+}
+
+.currently .text .h4 {
+	display: inline-block;
+}
+
+blockquote {
+	font-weight: 200;
+}
+
+header.impressum {
+	margin: 200px 24px 120px 200px;
+}
+
+footer.footer {
+	background-color: #aaa;
+	border-top: 3px dotted #000;
+	color: #000;
+	font-size: 18px;
+	padding: 24px 164px;
+	text-align: right;
+	
+}
+article {
+	margin: 2em 6em;
+}
+
+dt {
+	padding: 20px 0 6px;
+}
+dd {
+	font-style: italic;
+}
