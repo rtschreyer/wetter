@@ -1,0 +1,15 @@
+<header class="main">
+      <div class="h1">
+      Das Wetter in
+      <span class="dropdown">
+        <button class="btn btn-h1 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          {{selected.name}}
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li ng-repeat="item in cities"><a ng-model="selected" ng-click="getWeather(item)">{{item.name}}</a></li>
+        </ul>
+        </span>
+      </div>
+      <blockquote>Oder w&auml;hle deine Stadt aus der Dropdown Liste.</blockquote>
+</header>

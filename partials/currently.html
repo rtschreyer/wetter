@@ -1,0 +1,16 @@
+<header class="blockquote currently">
+        <div class='h4'>
+          {{selected.name}} am {{data | currently | time | dateFmt}} um {{data | currently | time | timeFmt}} 
+          <span class="muted"> / {{data | currently | localtime:data.offset | timeFmt}} Ortszeit</span>
+        </div>
+        <h1>
+          <div class="big">
+            <span class="temp">{{data | currently | temperature | temperatureFmt}}</span>
+            <span class="h4">Gef&uuml;hlte Temperatur {{data | currently | element:'apparentTemperature' | temperatureFmt}}</span>
+          </div>
+          <div class="text"> 
+            <span class="summary">{{data | currently | summary}}</span>
+            <span class="h4">Niederschlag: {{data | currently | element:'precipProbability' | percFmt}}</span>
+          </div>
+        </h1>
+</header> 
