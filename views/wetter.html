@@ -1,0 +1,29 @@
+
+    
+    <div id="main" data-role="page" ng-controller="locationCtrl">
+        <locator></locator>
+    
+        <section >
+            <ng-include src="'partials/currently.html'"></ng-include>
+        </section>
+        
+        <section ng-controller="slideCtrl">
+            <blockquote>
+                Vorhersage für die nächsten Tage
+                <footer><a class="btn" ng-click="start=(start<max-step)?(start+step):start">weitere {{step}} Tage</a></footer>
+                <footer><a class="btn" ng-click="start=(start>0)?(start-step):0">{{step}} Tage zurück</a></footer>
+            </blockquote>
+            <div class="slider">
+                <div class="slidelist">
+                    <div class="slidewindow">
+                    <span style="float:left;margin-right:28px;" class="animation"
+                          ng-repeat="item in (data | element:'daily' | element:'data')  | slice:start:(start+show)">
+                        <div ng-include src="'partials/daily.html'" include-replace></div>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+  
