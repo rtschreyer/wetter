@@ -1,0 +1,83 @@
+
+
+<section>
+
+
+<article>
+<h2>Zielstellung</h2>
+<p>
+Implementieren Sie einen Service, der f&uuml;r beliebige Geo-Koordinaten die Wettervorhersage 
+
+abruft (<a href="https://developer.forecast.io/docs/v2#forecast_call" target="_blank">https://developer.forecast.io/docs/v2#forecast_call</a>). Beachten Sie dabei Stichwor-
+te wie Performance, Reusability, Code Quality und Robustness.
+</p>
+<p>
+Schreiben Sie einen Controller innerhalb einer lauff&auml;higen Applikation, der den von Ihnen 
+
+implementierten Service nutzt und die von der API erhaltenen Daten in geeigneter Form 
+
+anzeigt.
+</p>
+<p>
+F&uuml;gen Sie optional einen Unit-Test f&uuml;r den Service hinzu.
+</p>
+</article>
+<article>
+<h2>Fragestellungen</h2>
+<dl>
+    <dt>
+Welche Ausbaum&ouml;glichkeiten sehen Sie f&uuml;r den von Ihnen implementierten Service?
+    </dt>
+    <dd>
+        Was hier implementiert ist, ist nur eine Beispiel App, ohne wirklichen Nutzwert. Trotzdem sollten z.B. die Konfigurationsparameter in den localstorage ausgelagert werden.
+        Man k&ouml;nnte daf&uuml;r eine view mit einem Eingabefeld anlegen, in das der user seinen eigenen Apikey eintragen kann.
+        <br/>
+        Es k&ouml;nnten mehrere Sprachen zur Auswahl stehen. Als Dateneingabe k&ouml;nnten andere Online-Services angebunden werden. Jede beliebige Quelle, die spatiale Geodaten ausgibt kann genutzt werden.
+        Daf&uuml; ben&ouml;tigt mein Service nur die Argumente 'lon' und 'lat', dass Frontend braucht zus&auml;tzlich einen Ortsnamen.
+    </dd>
+    <dt>
+Wie w&uuml;rden Sie den Service dokumentieren, so dass andere Entwickler ihn ohne gro&szlig;e 
+
+Probleme produktiv einsetzen k&ouml;nnen?
+</dt>
+    <dd>
+        F&uuml;r Entwickler, die den Sourcecode anpassen wollen, befinden sich bereits Kommentare an daf&uuml;r vorgesehenen Stellen.
+    </dd>
+    <dd>
+        Idealerweise sollte eine ausf&uuml;hrliche Dokumentation z.B. als Wiki festgehalten werden. Bei fortlaufender Entwicklung auch als Versionskontrolle mit Changelog.
+    </dd>
+    <dd>
+        Beim derzeitigen Umfang des Projektes gen&uuml;gt allerdings bereits eine readme Datei. Gegenenefalls im md Format, wenn es im git repository gepflegt wird.
+    </dd>
+    <dt>
+In welcher Weise ist der zweite verf&uuml;gbare API-Call (<a href="https://developer.forecast.io/docs/v2#time_call" target="_blank">https://developer.forecast.io/doc-
+s/v2#time_call</a>) einsetzbar?
+</dt>
+    <dd>
+        Z.B. um das Wetter bei bestimmten zur&uuml;ckliegenden Ereignissen heraus zu finden.
+    </dd>
+    <dd>
+        Oder um den Verlauf von Temperatur, Bew&ouml;lkung, Niederschlagsneigung an einem bestimmten Ort &uuml;ber einen l&auml;ngeren
+        Zeitraum zu dokumentieren.<br/>
+        Allerdings m&uuml;ssten dazu viele calls hintereinander abgesetzt werden und die Ergebnisse idealerweise in einer Datenbank gespeichert werden.
+    </dd>
+    <dt>
+Begr&uuml;nden Sie bitte in kurzer Form, warum Sie sich f&uuml;r bestimmte Implementierungsde-
+tails entschieden haben.
+</dt>
+    <dd>
+        Ganz wichtig war f&uuml;r mich, dass die Konfigurationsparameter Sprache und Apikey m&ouml;glichst leicht &auml;nderbar sein sollten. Der Apikey sollte niemals hardcodiert irgendwo im Sourcecode stehen. Daher habe ich die M&ouml;glichkeit implementiert eine externe json-Datei auslesen zu k&ouml;nnen.
+        Das ist noch nicht ideal gel&ouml;st.<br/>
+        Um den Apikey oder die Sprache zu &auml;ndern, reicht es die Entsprechenden Eintr&auml;ge in der Datei config.json zu &auml;ndern. Der Parameter 'lang' &auml;dert dabei nur die Ausgabesprache des forecast.io sevices.
+        F&uuml;r eine tats&auml;liche Globalisierung m&uuml;sste noch wesentlich mehr ge&auml;ndert werden. F&uuml;r diesen Zweck und auch, da
+        es eventuell sein kann, dass die Performance darunter leidet, wenn eine externe Datei jedesmal ausgelesen werden muss, habe ich den einfacheren Ansatz, die Parameter &uuml;ber setter methoden &auml;ndern zu k&ouml;nnen, ebenfalls implementiert.
+        Will man dies nutzen, reicht eine kleine &Auml;nderung im Quellcode.
+        <br/>
+        Das Frontend benutzt eine Liste von ausgew&auml;hlten St&auml;dten. Auch diese Liste k&ouml;nnte man aus einer externen Date auslesen, allerdings k&ouml;nnte man daf&uuml;r auch einen node-Service schreiben, eventuell einer, der Postleitzahlen auf Geodaten mappt.
+        <br/>
+        Implentiert ist zur Zeit nur, was einfach war und schnell ging.
+        
+    </dd>
+    </dl>
+</article>
+</section>
