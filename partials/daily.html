@@ -1,0 +1,16 @@
+ <div class="dailybox">   
+    <h4>{{item.time | dateFmt}} </h4>
+    <p>{{item.summary}}</p>
+    <div>
+      <div class="h4">
+         <small>Max </small>
+        {{item.temperatureMax | temperatureFmt}} 
+        <small>um {{item.temperatureMaxTime | local:data.offset | timeFmt}}</small>
+      </div>
+      <div class="h4">
+        <small>Min </small>
+        {{item.temperatureMin | temperatureFmt}} 
+        <small>um {{item.temperatureMinTime | local:data.offset | timeFmt}}</small>
+      </div>
+    </div>
+</div>
